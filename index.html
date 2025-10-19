@@ -1,810 +1,879 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bijoy Gopinath Tripura - Digital Marketing Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        :root {
-            /*  Updated to darker, more sophisticated color scheme */
-            --primary: #1a1f3a;
-            --primary-light: #2d3561;
-            --accent: #00d4ff;
-            --accent-light: #33e0ff;
-            --accent-dark: #00a8cc;
-            --background: #0f1419;
-            --surface: #1a1f3a;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b8d4;
-            --border: #2d3561;
-        }
+      :root {
+        /*  Updated to darker, more sophisticated color scheme */
+        --primary: #1a1f3a;
+        --primary-light: #2d3561;
+        --accent: #00d4ff;
+        --accent-light: #33e0ff;
+        --accent-dark: #00a8cc;
+        --background: #0f1419;
+        --surface: #1a1f3a;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b8d4;
+        --border: #2d3561;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--text-primary);
-            background-color: var(--background);
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--text-primary);
+        background-color: var(--background);
+      }
 
-        /*  Fixed navbar styling */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 20, 25, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-        }
+      /*  Fixed navbar styling */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(15, 20, 25, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+      }
 
-        /*  Added padding to body to account for fixed header */
-        body {
-            padding-top: 70px;
-        }
+      /*  Added padding to body to account for fixed header */
+      body {
+        padding-top: 70px;
+      }
 
-        .hero-image {
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 30%, var(--primary-light) 30%, var(--primary-light) 100%);
-            position: relative;
-            overflow: hidden;
-        }
+      .hero-image {
+        background: linear-gradient(
+          90deg,
+          var(--accent) 0%,
+          var(--accent) 50%,
+          var(--primary-light) 30%,
+          var(--primary-light) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
 
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-        }
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+      }
 
-        .service-card {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 8px;
-            background: var(--surface);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            border: 1px solid var(--border);
-        }
+      .service-card {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 8px;
+        background: var(--surface);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background 0.3s ease;
+        border: 1px solid var(--border);
+      }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-            background: rgba(0, 212, 255, 0.05);
-        }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        background: rgba(0, 212, 255, 0.05);
+      }
 
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: var(--primary);
-            font-size: 24px;
-        }
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: var(--primary);
+        font-size: 24px;
+      }
 
-        .project-card {
-            border-radius: 8px;
-            overflow: hidden;
-            background: var(--surface);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border);
-        }
+      .project-card {
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--surface);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid var(--border);
+      }
 
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.2);
-        }
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 212, 255, 0.2);
+      }
 
-        .project-image {
-            width: 100%;
-            height: 250px;
-            background: #2d3561;
-            overflow: hidden;
-        }
+      .project-image {
+        width: 100%;
+        height: 250px;
+        background: #2d3561;
+        overflow: hidden;
+      }
 
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-        .project-content {
-            padding: 1.5rem;
-        }
+      .project-content {
+        padding: 1.5rem;
+      }
 
-        .btn-primary {
-            background: var(--accent);
-            color: var(--primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-        }
+      .btn-primary {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+      }
 
-        .btn-primary:hover {
-            background: var(--accent-light);
-            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
-        }
+      .btn-primary:hover {
+        background: var(--accent-light);
+        box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+      }
 
-        .company-logo {
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
+      .company-logo {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
 
-        .testimonial-card {
-            background: var(--surface);
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+      .testimonial-card {
+        background: var(--surface);
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid var(--border);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.15);
-        }
+      .testimonial-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 212, 255, 0.15);
+      }
 
+      .contact-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+
+      .contact-info {
+        background: var(--primary-light);
+        color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+      }
+
+      .contact-info h3 {
+        margin-bottom: 1.5rem;
+        font-size: 18px;
+      }
+
+      .contact-info p {
+        margin-bottom: 1rem;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      .contact-info-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 14px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 14px;
+        background: var(--surface);
+        color: var(--text-primary);
+      }
+
+      .contact-form textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+      }
+
+      /*  Updated nav link styling with active state */
+      nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 14px;
+        margin: 0 1.5rem;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      /*  Added active link styling */
+      nav a.active {
+        color: var(--accent);
+      }
+
+      nav a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .text-accent {
+        color: var(--accent);
+      }
+
+      /*  Updated section backgrounds for dark theme */
+      section {
+        background: var(--background);
+      }
+
+      section.bg-gray-50 {
+        background: var(--surface);
+      }
+
+      section.bg-white {
+        background: var(--surface);
+      }
+
+      /*  Updated footer styling */
+      footer {
+        border-top: 1px solid var(--border);
+        background: var(--primary);
+      }
+
+      footer a {
+        color: var(--text-secondary);
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--accent);
+      }
+
+      .resume-item {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .resume-icon {
+        width: 24px;
+        height: 24px;
+        background: var(--accent);
+        border-radius: 50%;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 12px;
+      }
+
+      .resume-content h4 {
+        font-size: 16px;
+        margin-bottom: 0.25rem;
+        color: var(--text-primary);
+      }
+
+      .resume-content p {
+        font-size: 14px;
+        color: var(--text-secondary);
+      }
+
+      /*  Updated text colors for dark theme */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: var(--text-primary);
+      }
+
+      p {
+        color: var(--text-secondary);
+      }
+
+      @media (max-width: 768px) {
         .contact-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .contact-info {
-            background: var(--primary-light);
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .contact-info h3 {
-            margin-bottom: 1.5rem;
-            font-size: 18px;
-        }
-
-        .contact-info p {
-            margin-bottom: 1rem;
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            font-size: 14px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 14px;
-            background: var(--surface);
-            color: var(--text-primary);
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.5rem 0;
-        }
-
-        /*  Updated nav link styling with active state */
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            margin: 0 1.5rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        /*  Added active link styling */
-        nav a.active {
-            color: var(--accent);
-        }
-
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--accent);
+          grid-template-columns: 1fr;
         }
 
         .nav-links {
-            display: flex;
-            gap: 2rem;
+          display: none;
         }
 
-        .text-accent {
-            color: var(--accent);
+        .hero-section {
+          flex-direction: column;
         }
 
-        /*  Updated section backgrounds for dark theme */
-        section {
-            background: var(--background);
+        .project-grid {
+          grid-template-columns: 1fr;
         }
 
-        section.bg-gray-50 {
-            background: var(--surface);
+        .service-grid {
+          grid-template-columns: 1fr;
         }
-
-        section.bg-white {
-            background: var(--surface);
-        }
-
-        /*  Updated footer styling */
-        footer {
-            border-top: 1px solid var(--border);
-            background: var(--primary);
-        }
-
-        footer a {
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--accent);
-        }
-
-        .resume-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .resume-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--accent);
-            border-radius: 50%;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 12px;
-        }
-
-        .resume-content h4 {
-            font-size: 16px;
-            margin-bottom: 0.25rem;
-            color: var(--text-primary);
-        }
-
-        .resume-content p {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        /*  Updated text colors for dark theme */
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--text-primary);
-        }
-
-        p {
-            color: var(--text-secondary);
-        }
-
-        @media (max-width: 768px) {
-            .contact-section {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-section {
-                flex-direction: column;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav>
-                <div class="text-xl font-bold text-accent">Bijoy Gopinath Tripura</div>
-                <div class="nav-links">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </div>
-                <button class="btn-primary">Contact</button>
-            </nav>
-        </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav>
+          <div class="text-xl font-bold text-accent">
+            Bijoy Gopinath Tripura
+          </div>
+          <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+          <button class="btn-primary">Contact</button>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Welcome to my Digital Marketing Portfolio!</h1>
-                    <p class="text-lg mb-8 leading-relaxed">Hi, I'm Sarah, a passionate web developer based in USA. I love to create beautiful and functional websites that help businesses grow and succeed online.</p>
-                    <button class="btn-primary">View my work</button>
-                </div>
-                <div class="hero-image rounded-lg overflow-hidden h-96 md:h-full">
-                    <img src="/placeholder.svg?height=400&width=400" alt="Professional portrait">
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+        >
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Welcome to my Digital Marketing Portfolio!
+            </h1>
+            <p class="text-lg mb-8 leading-relaxed">
+              Hi, I'm Bijoy, a Professional Digital marketer based in
+              Bangladesh. I love to create beautiful and Marketing that help
+              businesses grow and succeed online.
+            </p>
+            <button class="btn-primary">View my work</button>
+          </div>
+          <div class="hero-image rounded-lg overflow-hidden h-96 md:h-full">
+            <img src="./Bijoy.png" alt="Professional portrait" />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Companies Section -->
-    
+
     <!-- About Section -->
     <section id="about" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                <div class="md:col-span-1">
-                    <div class="project-card p-6">
-                        <div class="project-image h-48 rounded-md overflow-hidden" style="background: linear-gradient(180deg, rgba(0,212,255,0.06), transparent);">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Profile portrait">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="font-bold text-xl mb-2">Sarah (Bijoy)</h3>
-                            <p class="text-sm mb-4">Digital marketer & web developer focused on building growth-oriented websites and campaigns. I combine design, analytics, and engineering to create measurable results.</p>
-                            <div class="text-sm text-secondary">Based in: USA</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:col-span-2">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-                    <p class="text-lg mb-6 max-w-3xl">I&apos;m a multidisciplinary digital marketer and web developer with experience delivering full-funnel campaigns and responsive web applications. My work centers on helping small and medium businesses grow through data-driven design, SEO best practices, and conversion-focused engineering.</p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="service-card">
-                            <h4 class="font-bold mb-2">Core Skills</h4>
-                            <ul class="text-sm text-secondary">
-                                <li>HTML, CSS, JavaScript</li>
-                                <li>SEO & Content Strategy</li>
-                                <li>Performance Optimization</li>
-                                <li>Google Analytics & Tag Manager</li>
-                            </ul>
-                        </div>
-                        <div class="service-card">
-                            <h4 class="font-bold mb-2">Tools & Tech</h4>
-                            <ul class="text-sm text-secondary">
-                                <li>React / Tailwind</li>
-                                <li>WordPress & CMS</li>
-                                <li>Figma & Design Systems</li>
-                                <li>Node / Serverless</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3 class="text-xl font-bold mb-3">Quick timeline</h3>
-                    <div class="resume-item">
-                        <div class="resume-icon">💼</div>
-                        <div class="resume-content">
-                            <h4>Senior Web Developer — Tech Company Inc.</h4>
-                            <p>2021 - Present</p>
-                        </div>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-icon">🎓</div>
-                        <div class="resume-content">
-                            <h4>B.Sc. Computer Science — University of Technology</h4>
-                            <p>Graduated 2020</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div class="md:col-span-1">
+            <div class="project-card p-6">
+              <div
+                class="project-image h-48 rounded-md overflow-hidden"
+                style="
+                  background: linear-gradient(
+                    180deg,
+                    rgba(0, 212, 255, 0.06),
+                    transparent
+                  );
+                "
+              >
+                <img
+                  src="./Bijoy.png"
+                  alt="Profile portrait"
+                />
+              </div>
+              <div class="project-content">
+                <h3 class="font-bold text-xl mb-2">Bijoy</h3>
+                <p class="text-sm mb-4">
+                  Digital marketer focused on building growth-oriented websites
+                  and campaigns. I combine design, analytics, and engineering to
+                  create measurable results.
+                </p>
+                <div class="text-sm text-secondary">Based in: Bangladesh</div>
+              </div>
             </div>
+          </div>
+          <div class="md:col-span-2">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+            <p class="text-lg mb-6 max-w-3xl">
+              I&apos;m a multidisciplinary digital marketer with experience
+              delivering full-funnel campaigns and responsive web applications.
+              My work centers on helping small and medium businesses grow
+              through data-driven design, SEO best practices, and
+              conversion-focused engineering.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="service-card">
+                <h4 class="font-bold mb-2">Core Skills</h4>
+                <ul class="text-sm text-secondary">
+                  <li>Social Media Marketing</li>
+                  <li>SEO & Content Strategy</li>
+                  <li>Performance Optimization</li>
+                  <li>Google Analytics & Tag Manager</li>
+                </ul>
+              </div>
+              <div class="service-card">
+                <h4 class="font-bold mb-2">Tools & Tech</h4>
+                <ul class="text-sm text-secondary">
+                  <li>React / Tailwind</li>
+                  <li>WordPress & CMS</li>
+                  <li>Figma & Design Systems</li>
+                  <li>Node / Serverless</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold mb-3">Quick timeline</h3>
+            <div class="resume-item">
+              <div class="resume-icon">💼</div>
+              <div class="resume-content">
+                <h4>Trainer. Computer Operation — Technical Training Center.</h4>
+                <p>2024 - Present</p>
+              </div>
+            </div>
+            <div class="resume-item">
+              <div class="resume-icon">🎓</div>
+              <div class="resume-content">
+                <h4>BSS. Dhighinala Degree College</h4>
+                <p>Graduated 2026</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-center text-sm font-semibold mb-12 uppercase tracking-wide">My awesome clients</h2>
-            <div class="grid grid-cols-2 md:grid-cols-6 gap-8">
-                <div class="company-logo">Coinbase</div>
-                <div class="company-logo text-green-500">Spotify</div>
-                <div class="company-logo text-red-600">Pinterest</div>
-                <div class="company-logo text-blue-500">Google</div>
-                <div class="company-logo text-orange-500">Amazon</div>
-                <div class="company-logo text-red-600">NETFLIX</div>
-            </div>
+    <!-- <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-center text-sm font-semibold mb-12 uppercase tracking-wide"
+        >
+          My awesome clients
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-8">
+          <div class="company-logo">Coinbase</div>
+          <div class="company-logo text-green-500">Spotify</div>
+          <div class="company-logo text-red-600">Pinterest</div>
+          <div class="company-logo text-blue-500">Google</div>
+          <div class="company-logo text-orange-500">Amazon</div>
+          <div class="company-logo text-red-600">NETFLIX</div>
         </div>
-    </section>
+      </div>
+    </section> -->
 
     <!-- Services Section -->
     <section id="services" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">What I do</h2>
-                <p class="text-lg max-w-2xl mx-auto">I'm a web developer with a passion for creating beautiful, functional, and user-friendly websites. Discover below how I can help you.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 service-grid">
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3 class="text-xl font-bold mb-3">Frontend Web Development</h3>
-                    <p class="text-sm">I create responsive and interactive web interfaces using modern technologies and best practices.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3 class="text-xl font-bold mb-3">Mobile App Development</h3>
-                    <p class="text-sm">I build cross-platform mobile applications that provide seamless user experiences.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3 class="text-xl font-bold mb-3">Technology Stack</h3>
-                    <p class="text-sm">I work with cutting-edge technologies to ensure your project is built on solid foundations.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3 class="text-xl font-bold mb-3">Web Optimization</h3>
-                    <p class="text-sm">I optimize websites for speed, performance, and search engine visibility.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3 class="text-xl font-bold mb-3">User-Centric Design</h3>
-                    <p class="text-sm">I design interfaces with the user in mind, ensuring intuitive and engaging experiences.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✅</div>
-                    <h3 class="text-xl font-bold mb-3">Testing and Quality Assurance</h3>
-                    <p class="text-sm">I ensure your project meets the highest standards of quality and reliability.</p>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">What I do</h2>
+          <p class="text-lg max-w-2xl mx-auto">
+            I'm a Digital marketer with a I help businesses grow their brand and
+            reach more customers through strategic social media marketing.
+          </p>
         </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 service-grid">
+          <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3 class="text-xl font-bold mb-3">Social Media marketing (SMM)</h3>
+            <p class="text-sm">
+              Promoting content and engaging customers through platforms like Facebook, Instagram, TikTok, and LinkedIn.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="text-xl font-bold mb-3">Search Engine Optimization (SEO)</h3>
+            <p class="text-sm">
+              Optimizing websites to rank higher on Google search results.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚙️</div>
+            <h3 class="text-xl font-bold mb-3">Email Marketing</h3>
+            <p class="text-sm">
+             Sending promotional or informational emails to subscribers.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h3 class="text-xl font-bold mb-3">Search Engine Marketing (SEM)</h3>
+            <p class="text-sm">
+             Running paid ads (Google Ads) to appear on search engines.
+
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3 class="text-xl font-bold mb-3">Affiliate Marketing</h3>
+            <p class="text-sm">
+              Earning commissions by promoting other companies’ products.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">✅</div>
+            <h3 class="text-xl font-bold mb-3">
+             Analytics & Reporting
+            </h3>
+            <p class="text-sm">
+              Tracking performance using tools like Google Analytics, Facebook Insights, etc.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
-                <p class="text-lg max-w-2xl mx-auto">Here are some of my recent projects that showcase my skills and expertise in web development.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/placeholder.svg?height=250&width=300" alt="Mobile App Development">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="font-bold mb-2">Mobile App Development</h3>
-                        <p class="text-sm mb-4">Building innovative mobile applications</p>
-                        <button class="btn-primary w-full">View Project</button>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/placeholder.svg?height=250&width=300" alt="Landing Page Development">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="font-bold mb-2">Landing Page Development</h3>
-                        <p class="text-sm mb-4">Creating high-converting landing pages</p>
-                        <button class="btn-primary w-full">View Project</button>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/placeholder.svg?height=250&width=300" alt="Mobile App Design">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="font-bold mb-2">Mobile App Design</h3>
-                        <p class="text-sm mb-4">User-focused mobile app interfaces</p>
-                        <button class="btn-primary w-full">View Project</button>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/placeholder.svg?height=250&width=300" alt="E-commerce Development">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="font-bold mb-2">E-commerce Development</h3>
-                        <p class="text-sm mb-4">Full-featured online stores</p>
-                        <button class="btn-primary w-full">View Project</button>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/placeholder.svg?height=250&width=300" alt="Mobile App Development">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="font-bold mb-2">Mobile App Development</h3>
-                        <p class="text-sm mb-4">Building innovative mobile applications</p>
-                        <button class="btn-primary w-full">View Project</button>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/placeholder.svg?height=250&width=300" alt="Landing Page Development">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="font-bold mb-2">Landing Page Development</h3>
-                        <p class="text-sm mb-4">Creating high-converting landing pages</p>
-                        <button class="btn-primary w-full">View Project</button>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/placeholder.svg?height=250&width=300" alt="Mobile App Design">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="font-bold mb-2">Mobile App Design</h3>
-                        <p class="text-sm mb-4">User-focused mobile app interfaces</p>
-                        <button class="btn-primary w-full">View Project</button>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/placeholder.svg?height=250&width=300" alt="E-commerce Development">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="font-bold mb-2">E-commerce Development</h3>
-                        <p class="text-sm mb-4">Full-featured online stores</p>
-                        <button class="btn-primary w-full">View Project</button>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+          <p class="text-lg max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my skills and
+            expertise in web development.
+          </p>
         </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 project-grid"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./socialmediamarketingstrategy-1650293336008.jpg"
+                alt="Socaial Media Marketing"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="font-bold mb-2">Social Media Marketing</h3>
+              <p class="text-sm mb-4">
+                Building innovative mobile applications
+              </p>
+              <button class="btn-primary w-full">View Project</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./SEO-image1.jpg"
+                alt="Landing Page Development"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="font-bold mb-2">Search Engine Optimization</h3>
+              <p class="text-sm mb-4">Creating high-converting landing pages</p>
+              <button class="btn-primary w-full">View Project</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./Head-Banner-581_408-5.svg"
+                alt="Mobile App Design"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="font-bold mb-2">Search Engine Marketing (SEM)</h3>
+              <p class="text-sm mb-4">User-focused mobile app interfaces</p>
+              <button class="btn-primary w-full">View Project</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./email-marketing2-2048x1280.png"
+                alt="E-commerce Development"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="font-bold mb-2">Email Marketing</h3>
+              <p class="text-sm mb-4">Full-featured online stores</p>
+              <button class="btn-primary w-full">View Project</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./1727020981746.png"
+                alt="Mobile App Development"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="font-bold mb-2">Search Engine Marketing (SEM)</h3>
+              <p class="text-sm mb-4">
+                Building innovative mobile applications
+              </p>
+              <button class="btn-primary w-full">View Project</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./Data-Analytics-Reporting.jpg"
+                alt="Landing Page Development"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="font-bold mb-2">Affiliate Marketing</h3>
+              <p class="text-sm mb-4">Creating high-converting landing pages</p>
+              <button class="btn-primary w-full">View Project</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./images.png"
+                alt="Mobile App Design"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="font-bold mb-2">Influencer Marketing</h3>
+              <p class="text-sm mb-4">User-focused mobile app interfaces</p>
+              <button class="btn-primary w-full">View Project</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="./images.jpeg"
+                alt="E-commerce Development"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="font-bold mb-2">Content Marketing</h3>
+              <p class="text-sm mb-4">Full-featured online stores</p>
+              <button class="btn-primary w-full">View Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Resume Section -->
     <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">My Resume</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <div class="resume-item">
-                        <div class="resume-icon">📋</div>
-                        <div class="resume-content">
-                            <h4>Bachelor of Science in Computer Science</h4>
-                            <p>University of Technology, 2020</p>
-                        </div>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-icon">💼</div>
-                        <div class="resume-content">
-                            <h4>Senior Web Developer</h4>
-                            <p>Tech Company Inc., 2021 - Present</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="resume-item">
-                        <div class="resume-icon">🏆</div>
-                        <div class="resume-content">
-                            <h4>Web Development Certification</h4>
-                            <p>Online Academy, 2019</p>
-                        </div>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-icon">⭐</div>
-                        <div class="resume-content">
-                            <h4>Full Stack Developer</h4>
-                            <p>Startup Company, 2020 - 2021</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">My Resume</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <div class="resume-item">
+              <div class="resume-icon">📋</div>
+              <div class="resume-content">
+                <h4>Computer Operation Level-3, NSDA</h4>
+                <p>Khagrachari TTC, 2024</p>
+              </div>
             </div>
-            <button class="btn-primary mt-8">View More</button>
+            <div class="resume-item">
+              <div class="resume-icon">💼</div>
+              <div class="resume-content">
+                <h4>Senior Web Developer</h4>
+                <p>Tech Company Inc., 2021 - Present</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="resume-item">
+              <div class="resume-icon">🏆</div>
+              <div class="resume-content">
+                <h4>Web Development Certification</h4>
+                <p>Online Academy, 2019</p>
+              </div>
+            </div>
+            <div class="resume-item">
+              <div class="resume-icon">⭐</div>
+              <div class="resume-content">
+                <h4>Full Stack Developer</h4>
+                <p>Startup Company, 2020 - 2021</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Clients Say</h2>
-                <p class="text-lg">Feedback from satisfied clients who have worked with me</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="testimonial-card">
-                    <p class="mb-4">"Sarah's work exceeded our expectations. She delivered a beautiful and functional website that has significantly improved our online presence."</p>
-                    <p class="font-bold">John Smith</p>
-                    <p class="text-sm">CEO, Tech Startup</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="mb-4">"Working with Sarah was a pleasure. She understood our vision and brought it to life with her exceptional coding skills."</p>
-                    <p class="font-bold">Emily Johnson</p>
-                    <p class="text-sm">Marketing Director, E-commerce</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="mb-4">"Sarah is a talented developer who pays attention to detail. Her work has helped us achieve our business goals."</p>
-                    <p class="font-bold">Michael Brown</p>
-                    <p class="text-sm">Founder, Digital Agency</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trusted Clients Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-2">Trusted by over 10,000+</h2>
-            <p class="text-lg mb-12">clients</p>
-            <div class="grid grid-cols-2 md:grid-cols-6 gap-8">
-                <div class="company-logo">Coinbase</div>
-                <div class="company-logo text-green-500">Spotify</div>
-                <div class="company-logo text-red-600">Pinterest</div>
-                <div class="company-logo text-blue-500">Google</div>
-                <div class="company-logo text-orange-500">Amazon</div>
-                <div class="company-logo text-red-600">NETFLIX</div>
-            </div>
-        </div>
+        <button class="btn-primary mt-8">View More</button>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
-                <p class="text-lg">Ready to start your next project? Get in touch and let's create something amazing together.</p>
-            </div>
-            <div class="contact-section">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>Get in touch with me through any of the following channels. I'm always happy to discuss new projects and opportunities.</p>
-                    <div class="mt-6">
-                        <div class="contact-info-item">
-                            <span>📞</span>
-                            <span>+1 (555) 123-4567</span>
-                        </div>
-                        <div class="contact-info-item">
-                            <span>✉️</span>
-                            <span>hello@brennathibaud.com</span>
-                        </div>
-                        <div class="contact-info-item">
-                            <span>📍</span>
-                            <span>123 Main Street, City, State 12345</span>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Subject">
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn-primary w-full">Send Message</button>
-                </form>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+          <p class="text-lg">
+            Ready to start your next project? Get in touch and let's create
+            something amazing together.
+          </p>
         </div>
+        <div class="contact-section">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>
+              Get in touch with me through any of the following channels. I'm
+              always happy to discuss new projects and opportunities.
+            </p>
+            <div class="mt-6">
+              <div class="contact-info-item">
+                <span>📞</span>
+                <span>+8801576577610</span>
+              </div>
+              <div class="contact-info-item">
+                <span>✉️</span>
+                <span>bijoygopinathtripura@gmail.com</span>
+              </div>
+              <div class="contact-info-item">
+                <span>📍</span>
+                <span>Gasban, Khagrachari Hill District</span>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <input type="text" placeholder="Subject" />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn-primary w-full">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="border-t border-gray-200 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm">© 2025 Brenna Thibaud. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="text-sm hover:text-gray-900">Privacy Policy</a>
-                    <a href="#" class="text-sm hover:text-gray-900">Terms of Service</a>
-                    <a href="#" class="text-sm hover:text-gray-900">Contact</a>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-sm">© 2025 Bijoy. All rights reserved.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="text-sm hover:text-gray-900">Privacy Policy</a>
+            <a href="#" class="text-sm hover:text-gray-900">Terms of Service</a>
+            <a href="#" class="text-sm hover:text-gray-900">Contact</a>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script>
-        //  Added active link detection on scroll
-        function updateActiveLink() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
+      //  Added active link detection on scroll
+      function updateActiveLink() {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
 
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveLink);
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute("id");
+          }
         });
 
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").slice(1) === current) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveLink);
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Form submission
+      document
+        .querySelector(".contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your message! I will get back to you soon.");
+          this.reset();
         });
 
-        // Add scroll animation for elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+      // Add scroll animation for elements
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
 
-        document.querySelectorAll('.service-card, .project-card, .testimonial-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+      document
+        .querySelectorAll(".service-card, .project-card, .testimonial-card")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(el);
         });
     </script>
-</body>
+  </body>
 </html>
